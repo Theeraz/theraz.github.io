@@ -104,11 +104,11 @@ Parece que actualmente no soy el usuario "hatter" por completo, decido "cambiar 
 
 ![c91334c59f6c97f300b9c7d835cc4257](https://github.com/Theeraz/theraz.github.io/assets/90190970/8402f86d-2e7b-4ecf-ba5b-1d4ff454c447)  
 
-Y ahora sí tengo todos los permisos del usuario actual. Descubro que existe un script llamado LinPEAS y que trabaja con escalado de privilegios. Este script te ayuda a encontrar capabilities, que permiten a un proceso realizar operaciones privilegiadas específicas sin necesidad de ser `root`. La idea era usar LinPEAS pero no funciona, me hubiese ahorrado tiempo el haber conocido este comando antes:  
+Y ahora sí tengo todos los permisos del usuario actual. Descubro que existe un script llamado LinPEAS y que es una herramienta de auditoría de seguridad para sistemas Linux. Su función principal es realizar un escaneo automático de todo el sistema Linux para identificar configuraciones inseguras, configuraciones de privilegios, etc... Este script te ayuda a encontrar ejecutables con capabilities, que permiten a un proceso realizar operaciones privilegiadas específicas sin necesidad de ser `root`. La idea era usar LinPEAS pero por algún motivo no funciona (no logro entender por qué no se ejecuta). Encuentro un comando que hace una función similar y me hubiese ahorrado bastante tiempo:  
 
 ![0d307c7d77e6322576645d4cf585f094](https://github.com/Theeraz/theraz.github.io/assets/90190970/bc55092a-898b-472c-8787-a1be417d3197)  
 
-`getcap -r`: Este comando lista los permisos de capacidad extendidos en algunos archivos y directorios, es decir, lista los comandos que podemos usar cómo `root` sin serlo. `-r` indica que se ejecutará de manera recursiva en directorios y subdirectorios. Buscando encuentro un comando que permite cambiar el `setuid` de `perl` y así poder escalar a `root`:  
+`getcap -r`: Este comando lista los permisos de capacidad extendidos en algunos archivos y directorios, es decir, lista los comandos que podemos usar cómo `root` sin serlo. `-r` indica que se ejecutará de manera recursiva en directorios y subdirectorios. Dado que mis opciones se limitan a `perl` puesto que son dos de mis tres opciones posibles para cambiar el UID, busco una posible manera de aprovechar esta vulnerabilidad.  Logro encontrar un comando que permite cambiar el `setuid` de `perl` y así poder escalar a `root`:  
 `/usr/bin/perl -e 'use POSIX (setuid); POSIX::setuid(0); exec "/bin/bash";'`
 
 ![f15c4f0e581c2a49403a69350b69a16f](https://github.com/Theeraz/theraz.github.io/assets/90190970/1df9297d-a4fa-4287-a4aa-a8e0513579f5)
