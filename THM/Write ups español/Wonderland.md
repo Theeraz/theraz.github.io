@@ -77,7 +77,7 @@ Con esta línea de código podremos ejecutar una shell de bash de un script de P
 
 ![7c0bd0645eac566fbcdf62b16b96ce71](https://github.com/Theeraz/theraz.github.io/assets/90190970/dfa6ec16-6720-4f35-ab57-705799f27dd0)
 
-Funcionó! Lo siguiente es mirar en el directorio de este usuario y encuentro un archivo que está marcado en rojo. Parece que el fondo rojo indica que tiene SUID. Pruebo a ejecutarlo y no funciona, así que pruebo a hacerle `cat`:  
+Funcionó! Lo siguiente es mirar en el directorio de este usuario y encuentro un archivo que está marcado en rojo. Parece que Los archivos listados con fondo rojo y texto blanco indican que el bit setuid ha sido invertido. Esto significa que el archivo/script/programa se ejecutará como el usuario al que pertenece, y no cómo el usuario que lo ejecute. Pruebo a ejecutarlo cómo script y no funciona, así que pruebo a hacerle `cat`:  
 
 ![fb46abe8633b855a0df067773d271e5e](https://github.com/Theeraz/theraz.github.io/assets/90190970/25d6fee9-8aaf-4824-9bac-1692baaaa85e)  
 
