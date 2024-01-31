@@ -85,7 +85,7 @@ No entiendo mucho de scripting y lo único que llama mi atención es esta línea
 
 ![70a644d13ad3afe1671149bb96422627](https://github.com/Theeraz/theraz.github.io/assets/90190970/a3e5d8b2-458d-4325-b553-77331e02ae02)  
 
-Es la línea que aparece cuándo lo ejecutamos y parece que está configurado para que el output que da, sea de una hora en adelante y no la actual. Parece que el comando `date` carece de ruta absoluta. Es aquí cuándo investigando descubro el path hijacking. Al parecer debo modificar la variable de entorno PATH para que se ejecute el directorio que yo le indique y no el que ejecutaría por defecto:
+Es la línea que aparece cuándo lo ejecutamos y parece que está configurado para que el output que da, sea de una hora en adelante y no la actual. Parece que el comando `date` carece de ruta absoluta. Es aquí cuándo investigando descubro el path hijacking. Al parecer debo modificar la variable de entorno PATH para que se ejecute el directorio que yo le indique y no el que ejecutaría por defecto:  
 `echo "/bin/bash" > date`: Para añadir la línea de código al comando `date`
 `chmod +x date`: Para darle permisos de ejecución y especificar a qué archivo se lo queremos dar
 `export PATH=/home/rabbit:$PATH`:  Usar `export` con una variable de entorno (PATH) me permite cambiarla de directorio y que se ejecute en este. Importante exportarla en el directorio en el que está el archivo que queremos ejecutar, ya que probé exportándola en home y no funcionó:  
