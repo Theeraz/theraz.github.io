@@ -1,6 +1,6 @@
 # Wonderland WriteUp
 
-Comienzo con el típico escaneo de puertos de nmap con los comandos que ya conozco y que suelen funcionarme:
+Comienzo como usualmente hago, escaneo de puertos de nmap con los comandos que ya conozco y que suelen funcionarme:
 `nmap -sC -sV 10.10.7.36`
 - `-sC`: Para activar el escaneo de scripts y conseguir la máxima información posible de servicios, configuraciones específicas, etc
 - `-sV`: Para detectar las versiones de los servicios en los puertos abiertos, esto ayuda a identificar vulnerabilidades específicas u obtener más información de los servicios en ejecución
