@@ -20,8 +20,7 @@ Echo un vistazo en el código fuente de la página esperando encontrar algún us
 
 ![Gobuster](https://github.com/Theeraz/theraz.github.io/assets/90190970/12515126-cb44-4a60-8f37-2f4582c7d916)  
 
- Encuentro 3 directorios:
- Accedo al primero `/img` en el que encuentro 3 imágenes y 2 de ellas son la misma pero les cambia el color y el formato, eso llama mi atención:  
+ Encuentro 3 directorios. Accedo al primero (`/img`) en el que encuentro 3 imágenes y 2 de ellas son la misma pero les cambia el color y el formato, eso llama mi atención:  
 
  ![dir r](https://github.com/Theeraz/theraz.github.io/assets/90190970/4e9cb0be-00bf-4179-8c21-9374c60302f5)  
 
