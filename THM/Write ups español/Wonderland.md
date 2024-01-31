@@ -117,7 +117,7 @@ Consigo cambiar el UID a 0 (`root`)...y funciona! Tenemos privilegios de `root` 
 
 ![c5303978e4274c1d7f043ae64fde695a](https://github.com/Theeraz/theraz.github.io/assets/90190970/7e038f0a-86f1-45f2-af84-c2f6e58cb948)
 
-He de decir que es la primera vez que me he enfrentado al escalado de privilegios y al path hijacking y aunque por algunos momentos me he sentido perdido, no me ha resultado muy tedioso encontrar las respuestas a mis preguntas y los comandos que me han permitido completar dicho escalado.
+He de decir que es la primera vez que me he enfrentado al escalado de privilegios y al path hijacking y aunque por algunos momentos me he sentido perdido, no me ha resultado muy tedioso encontrar las respuestas a mis preguntas y los comandos que me han permitido realizar dichas acciones.
 
 Recursos: https://www.hackingarticles.in/linux-for-pentester-perl-privilege-escalation/#:~:text=Capabilities%20in%20Privilege%20Escalation&text=Capabilities%20are%20those%20permissions%20that,to%20perform%20specific%20privileged%20tasks  
 
