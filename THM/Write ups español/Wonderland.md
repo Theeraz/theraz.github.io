@@ -24,19 +24,18 @@ Echo un vistazo en el código fuente de la página esperando encontrar algún us
 
  ![dir r](https://github.com/Theeraz/theraz.github.io/assets/90190970/4e9cb0be-00bf-4179-8c21-9374c60302f5)  
 
- 
 En el segundo `/index.html` encuentro el mismo directorio que ya visité anteriormente, en el que sale una frase (Follow the white rabbit) y la foto del conejo. Descargo la foto por si acaso contuviese alguna pista oculta.
-  En el tercero `/r` encuentro otro directorio en el que sólo hay una frase, en ninguno de los 3 he encontrado nada en el source code:  
+En el tercero `/r` encuentro otro directorio en el que sólo hay una frase, en ninguno de los 3 he encontrado nada en el source code:  
 
-  ![f083eeebe66675c4814e215a7a213b26](https://github.com/Theeraz/theraz.github.io/assets/90190970/73d59fac-aa8b-4b5c-af71-4677913b9d77)  
+![f083eeebe66675c4814e215a7a213b26](https://github.com/Theeraz/theraz.github.io/assets/90190970/73d59fac-aa8b-4b5c-af71-4677913b9d77)  
 
-  Decido usar otro diccionario con gobuster con la esperanza de que quizás me liste algún directorio el cuál no se haya listado antes:  
-  `gobuster dir -u http://10.10.7.36 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt 2> /dev/null`  
+Decido usar otro diccionario con gobuster con la esperanza de que quizás me liste algún directorio el cuál no se haya listado antes:  
+`gobuster dir -u http://10.10.7.36 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt 2> /dev/null`  
 
-  ![gobuster2](https://github.com/Theeraz/theraz.github.io/assets/90190970/09688e98-57e7-4295-8370-4609bbb7dfd4)
+![gobuster2](https://github.com/Theeraz/theraz.github.io/assets/90190970/09688e98-57e7-4295-8370-4609bbb7dfd4)
 
 Encuentro varios directorios que antes no aparecieron, pero el único accesible es `/poem`. Investigo un poco el source code pero tampoco encuentro nada. Decido probar a hacerle esteganografía a la foto del conejo que encontré antes:
-`steghide extract -sf "file.jpg"
+`steghide extract -sf "file.jpg"`
 - `extract`: Para extraer la información oculta
 - `-sf`: Para indicar el archivo sobre el que queremos ejecutar el comando
 Me pide una passphrase, pero simplemente presionando enter me da permiso para poder extraer la pista:
@@ -72,7 +71,7 @@ Hay 2 datos importantes. El primero es que `rabbit` parece tener privilegios sob
 
 ![e3cefbe29474fb671133c664d5461fa9](https://github.com/Theeraz/theraz.github.io/assets/90190970/5a41aaf9-0d6b-4295-9012-21a422867aa5)  
 
-Con esta línea de código podremos ejecutar una shell de bash de un script de Python. Guardo con `Esc + :x` y lo siguiente es ejecutar el comando con el usuario `rabbit` (usando sudo para especificarlo) e introduciendo las rutas absolutas que encontramos antes (básicamente usar el comando que apareció 2 imágenes atrás):
+Con esta línea de código podremos ejecutar una shell de bash de un script de Python. Guardo con `Esc + :x` y lo siguiente es ejecutar el comando con el usuario `rabbit` (usando sudo para especificarlo) e introduciendo las rutas absolutas que encontramos antes (básicamente usar el comando que apareció cómo output 2 imágenes atrás):
 `sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py`  
 
 ![7c0bd0645eac566fbcdf62b16b96ce71](https://github.com/Theeraz/theraz.github.io/assets/90190970/dfa6ec16-6720-4f35-ab57-705799f27dd0)
