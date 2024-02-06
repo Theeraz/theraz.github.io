@@ -71,7 +71,7 @@ There are 2 important facts. The first is that `rabbit` seems to have privileges
 
 ![e3cefbe29474fb671133c664d5461fa9](https://github.com/Theeraz/theraz.github.io/assets/90190970/5a41aaf9-0d6b-4295-9012-21a422867aa5)  
 
-With this line of code we can run a bash shell of a Python script. I save with `Esc + :x` and the next thing is to run the command with the user `rabbit` (using sudo to specify it) and entering the absolute paths we found before (basically use the command that appeared 2 images ago):
+With this line of code we can run a bash shell of a Python script. I save with `Esc + :x` and the next thing is to run the command with the user `rabbit` (using sudo to specify it) and entering the absolute paths we found before (basically use the command that appeared as output 2 images ago):
 `sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py`  
 
 ![7c0bd0645eac566fbcdf62b16b96ce71](https://github.com/Theeraz/theraz.github.io/assets/90190970/dfa6ec16-6720-4f35-ab57-705799f27dd0)  
