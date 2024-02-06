@@ -103,7 +103,7 @@ It seems that I am not currently the "hatter" user completely, I decide to "chan
 
 ![c91334c59f6c97f300b9c7d835cc4257](https://github.com/Theeraz/theraz.github.io/assets/90190970/8402f86d-2e7b-4ecf-ba5b-1d4ff454c447)  
 
-And now I have all the permissions of the current user. I discover that there is a script called LinPEAS and that it is a security auditing tool for Linux systems. Its main function is to perform an automatic scan of the whole Linux system to identify insecure configurations, privilege settings, etc... This script helps you find executables with capabilities, which allow a process to perform specific privileged operations without needing to be `rooted`. The idea was to use LinPEAS but for some reason it doesn't work (I can't understand why it doesn't run). I find a command that does a similar function and it would have saved me a lot of time:  
+And now I have all the permissions of the current user. I discover that there is a script called LinPEAS and that it is a security auditing tool for Linux systems. Its main function is to perform an automatic scan of the whole Linux system to identify insecure configurations, privilege settings, etc... This script helps you find executables with capabilities, which allow a process to perform specific privileged operations without needing to be `root`. The idea was to use LinPEAS but for some reason it doesn't work (I can't understand why it doesn't run). I find a command that does a similar function and it would have saved me a lot of time:  
 
 ![0d307c7d77e6322576645d4cf585f094](https://github.com/Theeraz/theraz.github.io/assets/90190970/bc55092a-898b-472c-8787-a1be417d3197)  
 
