@@ -1,6 +1,6 @@
 # Wonderland WriteUp
 
-I start as I usually do, nmap port scanning with the commands that I already know and that usually work for me:
+I start as I usually do, nmap port scanning with the flags that I already know and that usually work for me:
 `nmap -sC -sV 10.10.7.36`.
 - `-sC`: To activate script scanning and get as much information as possible about services, specific configurations, etc.
 - `-sV`: To detect the versions of services on open ports, this helps to identify specific vulnerabilities or get more information on running services
