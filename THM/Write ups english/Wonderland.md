@@ -107,7 +107,7 @@ And now I have all the permissions of the current user. I discover that there is
 
 ![0d307c7d77e6322576645d4cf585f094](https://github.com/Theeraz/theraz.github.io/assets/90190970/bc55092a-898b-472c-8787-a1be417d3197)  
 
-`getcap -r`: This command lists the extended capability permissions on some files and directories, i.e. it lists commands that we can use as `root` without being `root`. `-r` indicates that it will be executed recursively on directories and subdirectories. Since my options are limited to `perl` as these are two of my three possible options for changing the UID, I look for a possible way to exploit this vulnerability.  I manage to find a command that allows me to change the `setuid` of `perl` so that I can scale to `root`. This "technique" is known as "Privilege Escalation using capabilities":  
+`getcap -r`: This command lists the extended capability permissions on some files and directories, meaning that it lists commands that we can use as `root` without being `root`. `-r` indicates that it will be executed recursively on directories and subdirectories. Since my options are limited to `perl` as these are two of my three possible options for changing the UID, I look for a possible way to exploit this vulnerability.  I manage to find a command that allows me to change the `setuid` of `perl` so that I can scale to `root`. This "technique" is known as "Privilege Escalation using capabilities":  
 `/usr/bin/perl -e `use POSIX (setuid); POSIX::setuid(0); exec "/bin/bash";'`
 
 ![f15c4f0e581c2a49403a69350b69a16f](https://github.com/Theeraz/theraz.github.io/assets/90190970/1df9297d-a4fa-4287-a4aa-a8e0513579f5)
